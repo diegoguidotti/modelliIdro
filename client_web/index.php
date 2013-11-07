@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <script src="scripts/OpenLayers/OpenLayers.js"></script>
-<script src="mobidic.js"></script>
+<script src="scripts/modelli_idro.js"></script>
 <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js"></script>
 </head>
 <body onLoad="init()">
@@ -26,7 +26,6 @@
 	float:right;
 	
 }
-
 </style>
 
 

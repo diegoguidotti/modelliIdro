@@ -51,3 +51,4 @@ Software Requisites
 --------------------
 
 4.1 copy/link the client_web folder in apache htdocs folder 
+4.2 edit client_web/
