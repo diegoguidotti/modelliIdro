@@ -1,7 +1,6 @@
 The script take a tar folder containing for several basins the results of several hydrological models. The reults can be geoTiff raster data and shapefile related to hydrological networks with some attributes related to the matematical simulation.
 
-
-
+The tar folder has to be transfered in the input_data folder and the exe_import.sh script has to lunched to prepare all the data. The test.sh script will test the system using some sample data (test_data/mobidic_test_data.tar)
 
 
 Software Requisites
