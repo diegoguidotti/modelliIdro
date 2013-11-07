@@ -1,0 +1,501 @@
+MAP
+
+  NAME "Risultati dei modelli per i Bacini"
+	TRANSPARENT ON
+
+	SHAPEPATH "../raster/"
+	EXTENT    1693693.0 4782237.5 1771724.25 4861862.0
+	SIZE      490 500
+	
+  PROJECTION
+       "proj=tmerc" "lat_0=0" "lon_0=9" "k=0.999600" "x_0=1500000" "y_0=0" "ellps=intl" "units=m" "no_defs" "towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68"
+	END
+
+  WEB
+    METADATA
+        "wms_title"  "WMS Modelli Idro TEMPSUOLO"
+        "wms_online_resources" "http://192.168.12.194/cgi-bin/mapserv?map=/opt/modelli_idro/mapfile/tempsuolo.map&"
+        "wms_srs"  "EPSG:4326 EPSG:26591 EPSG:900913"
+         "ows_enable_request" "*"
+    END
+  END
+
+  LAYER
+
+		NAME "tempsuolo"
+		TYPE raster
+		DATA "%raster_theme%"
+		TRANSPARENCY  60
+		PROJECTION
+       "proj=tmerc" "lat_0=0" "lon_0=9" "k=0.999600" "x_0=1500000" "y_0=0" "ellps=intl" "units=m" "no_defs" "towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68"
+ 		END
+
+		VALIDATION
+		  'raster_theme' '.+'
+		END
+  
+		STATUS default
+		PROCESSING "SCALE=-20,50"
+		PROCESSING "SCALE_BUCKETS=100"
+		#PROCESSING "RESAMPLE=BILINEAR"
+
+  CLASS
+    NAME "< -12"
+    EXPRESSION ([pixel] <= -10)
+    STYLE
+      COLOR 0 0 192
+    END
+  END
+  CLASS
+    NAME "-10 -8"
+    EXPRESSION ([pixel] > -10  and [pixel] <= -8)
+    STYLE
+      COLOR 20 100 210	
+    END
+  END
+  CLASS
+    NAME "-8 -6"
+    EXPRESSION ([pixel] > -8  and [pixel] <= -6)
+    STYLE
+      COLOR 40 130 240
+    END
+  END
+  CLASS
+    NAME "-6 -4"
+    EXPRESSION ([pixel] > -6  and [pixel] <= -4)
+    STYLE
+      COLOR 80 165 245
+    END
+  END
+  CLASS
+    NAME "-4 -2"
+    EXPRESSION ([pixel] > -4  and [pixel] <= -2)
+    STYLE
+      COLOR 120 185 250		
+    END
+  END
+  CLASS
+    NAME "-2 0"
+    EXPRESSION ([pixel] > -2  and [pixel] <= 0)
+    STYLE
+      COLOR 150 210 250
+    END
+  END
+  CLASS
+    NAME "0-2"
+    EXPRESSION ([pixel] > 0  and [pixel] <= 2)
+    STYLE
+      COLOR 180 240 250
+    END
+  END
+  CLASS
+    NAME "2-4"
+    EXPRESSION ([pixel] > 2  and [pixel] <= 4)
+    STYLE
+      COLOR 	230 255 230	
+    END
+  END
+  CLASS
+    NAME "4-6"
+    EXPRESSION ([pixel] > 4  and [pixel] <= 6)
+    STYLE
+      COLOR 190 250 180
+    END
+  END
+  CLASS
+    NAME "6-8"
+    EXPRESSION ([pixel] > 6  and [pixel] <= 8)
+    STYLE
+      COLOR 0 206 123	
+    END
+  END
+  CLASS
+    NAME "8-10"
+    EXPRESSION ([pixel] > 8  and [pixel] <= 10)
+    STYLE
+      COLOR 0 170 0		
+    END
+  END
+  CLASS
+    NAME "10-12"
+    EXPRESSION ([pixel] > 10  and [pixel] <= 12)
+    STYLE
+      COLOR 	123 206 0	
+    END
+  END
+  CLASS
+    NAME "12-14"
+    EXPRESSION ([pixel] > 12  and [pixel] <= 14)
+    STYLE
+      COLOR 206 231 0
+    END
+  END
+  CLASS
+    NAME "14-16"
+    EXPRESSION ([pixel] > 14  and [pixel] <= 16)
+    STYLE
+      COLOR 255 255 40
+    END
+  END
+  CLASS
+    NAME "16-18"
+    EXPRESSION ([pixel] > 16  and [pixel] <= 18)
+    STYLE
+      COLOR 255 204 0
+    END
+  END
+  CLASS
+    NAME "18-20"
+    EXPRESSION ([pixel] > 18  and [pixel] <= 20)
+    STYLE
+      COLOR 255 156 0
+    END
+  END
+  CLASS
+    NAME "20-22"
+    EXPRESSION ([pixel] > 20  and [pixel] <= 22)
+    STYLE
+      COLOR 255 99 0
+    END
+  END
+  CLASS
+    NAME "22-24"
+    EXPRESSION ([pixel] > 22  and [pixel] <= 24)
+    STYLE
+      COLOR 255 0 0
+    END
+  END
+  CLASS
+    NAME "24-26"
+    EXPRESSION ([pixel] > 24  and [pixel] <= 26)
+    STYLE
+      COLOR 204 0 0
+    END
+  END
+  CLASS
+    NAME "26-28"
+    EXPRESSION ([pixel] > 26  and [pixel] <= 28)
+    STYLE
+      COLOR 	156 0 0	
+    END
+  END
+  CLASS
+    NAME "28-30"
+    EXPRESSION ([pixel] > 28  and [pixel] <= 30)
+    STYLE
+      COLOR 120 0 0
+    END
+  END
+  CLASS
+    NAME "30-32"
+    EXPRESSION ([pixel] > 30  and [pixel] <= 32)
+    STYLE
+      COLOR 156 0 156
+    END
+  END
+  CLASS
+    NAME "32-34"
+    EXPRESSION ([pixel] > 32  and [pixel] <= 34)
+    STYLE
+      COLOR 255 0 255
+    END
+  END
+  CLASS
+    NAME "34-36"
+    EXPRESSION ([pixel] > 34  and [pixel] <= 36)
+    STYLE
+      COLOR 250 170 255
+    END
+  END
+  CLASS
+    NAME "36-38"
+    EXPRESSION ([pixel] > 36  and [pixel] <= 38)
+    STYLE
+      COLOR 220 220 250
+    END
+  END
+  CLASS
+    NAME "38-40"
+    EXPRESSION ([pixel] > 38  and [pixel] <= 40)
+    STYLE
+      COLOR 160 140 255
+    END
+  END
+  CLASS
+    NAME ">40"
+    EXPRESSION ([pixel] >= 40)
+    STYLE
+      COLOR 72 60 200
+    END
+  END
+END
+
+
+
+LAYER
+
+  NAME "satusuolo"
+  TYPE raster
+  DATA "%raster_theme%"
+  TRANSPARENCY  60
+ PROJECTION
+       "proj=tmerc" "lat_0=0" "lon_0=9" "k=0.999600" "x_0=1500000" "y_0=0" "ellps=intl" "units=m" "no_defs" "towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68"
+ END
+
+  VALIDATION
+    'raster_theme' '.+'
+  END
+
+  
+  STATUS default
+  PROCESSING "SCALE=0.0000001,1"
+  PROCESSING "SCALE_BUCKETS=100"
+
+  CLASS
+    NAME "< 10%"
+    EXPRESSION ([pixel] <= 0.1)
+    STYLE
+      COLOR 0 0 143
+    END
+  END
+  CLASS
+    NAME "10%-20%"
+    EXPRESSION ([pixel] > 0.1  and [pixel] <= 0.2)
+    STYLE
+      COLOR 0 15 255
+    END
+  END  
+  CLASS
+    NAME "20%-30%"
+    EXPRESSION ([pixel] > 0.2  and [pixel] <= 0.3)
+    STYLE
+      COLOR 10 175 255		
+    END
+  END
+  CLASS
+    NAME "30%-35%"
+    EXPRESSION ([pixel] > 0.3  and [pixel] <=0.35)
+    STYLE
+      COLOR 0 223 255
+    END
+  END
+  CLASS
+    NAME "35%-40%"
+    EXPRESSION ([pixel] > 0.35  and [pixel] <= 0.4)
+    STYLE
+      COLOR 63 255 191
+    END
+  END  
+  CLASS
+    NAME "40%-45%"
+    EXPRESSION ([pixel] > 0.4  and [pixel] <= 0.45)
+    STYLE
+      COLOR 1143 255 111
+    END
+  END
+  CLASS
+    NAME "45%-50%"
+    EXPRESSION ([pixel] > 0.45  and [pixel] <= 0.5)
+    STYLE
+      COLOR 207 255 47
+    END
+  END
+  CLASS
+    NAME "50%-55%"
+    EXPRESSION ([pixel] > 0.5  and [pixel] <= 0.55)
+    STYLE
+      COLOR 239 255 15		
+    END
+  END
+  CLASS
+    NAME "55%-60%"
+    EXPRESSION ([pixel] > 0.55  and [pixel] <= 0.60)
+    STYLE
+      COLOR 255 255 0	
+    END
+  END
+  CLASS
+    NAME "60%-65%"
+    EXPRESSION ([pixel] > 0.60  and [pixel] <= 0.65)
+    STYLE
+      COLOR 255 230 0
+    END
+  END  
+  CLASS
+    NAME "65%-70%"
+    EXPRESSION ([pixel] > 0.65  and [pixel] <= 0.70)
+    STYLE
+      COLOR 255 170 0
+    END
+  END
+  CLASS
+    NAME "70%-75%"
+    EXPRESSION ([pixel] > 0.7 and [pixel] <= 0.75)
+    STYLE
+      COLOR 255 100 0
+    END
+  END
+  CLASS
+    NAME "75%-80%"
+    EXPRESSION ([pixel] > 0.75  and [pixel] <= 0.8)
+    STYLE
+      COLOR 255 0 0
+    END
+  END
+  CLASS
+    NAME "80%-90%"
+    EXPRESSION ([pixel] > 0.8  and [pixel] <= 0.9)
+    STYLE
+      COLOR 207 0 0 
+    END
+  END  
+  CLASS
+    NAME "90%-100%"
+    EXPRESSION ([pixel] >= 0.9)
+    STYLE
+      COLOR 143 0 0 
+    END
+  END
+END
+
+
+LAYER
+  NAME "evapotras"
+  TYPE raster
+  DATA "%raster_theme%"
+  TRANSPARENCY  60
+ PROJECTION
+       "proj=tmerc" "lat_0=0" "lon_0=9" "k=0.999600" "x_0=1500000" "y_0=0" "ellps=intl" "units=m" "no_defs" "towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68"
+ END
+
+ VALIDATION
+    'raster_theme' '.+'
+  END
+  
+  STATUS default
+  PROCESSING "SCALE=0.0000001,1"
+  PROCESSING "SCALE_BUCKETS=100"
+
+  CLASS
+    NAME "< 0.01"
+    EXPRESSION ([pixel] <= 0.01)
+    STYLE
+      COLOR 0 0 143
+    END
+  END
+  CLASS
+    NAME "0.01-0.02"
+    EXPRESSION ([pixel] > 0.01  and [pixel] <= 0.02)
+    STYLE
+      COLOR 0 0 223	
+    END
+  END
+  CLASS
+    NAME "0.02-0.03"
+    EXPRESSION ([pixel] > 0.02  and [pixel] <= 0.03)
+    STYLE
+      COLOR 0 15 255
+    END
+  END
+  CLASS
+    NAME "0.03-0.04"
+    EXPRESSION ([pixel] > 0.03  and [pixel] <= 0.04)
+    STYLE
+      COLOR 0 111 255
+    END
+  END
+  CLASS
+    NAME "0.04-0.05"
+    EXPRESSION ([pixel] > 0.04  and [pixel] <= 0.05)
+    STYLE
+      COLOR 10 175 255		
+    END
+  END
+  CLASS
+    NAME "0.05-0.06"
+    EXPRESSION ([pixel] > 0.05  and [pixel] <=0.06)
+    STYLE
+      COLOR 0 223 255
+    END
+  END
+  CLASS
+    NAME "0.06-0.07"
+    EXPRESSION ([pixel] > 0.06  and [pixel] <= 0.07)
+    STYLE
+      COLOR 63 255 191
+    END
+  END  
+  CLASS
+    NAME "0.07-0.08"
+    EXPRESSION ([pixel] > 0.07  and [pixel] <= 0.08)
+    STYLE
+      COLOR 1143 255 111
+    END
+  END
+  CLASS
+    NAME "0.08-0.09"
+    EXPRESSION ([pixel] > 0.08  and [pixel] <= 0.9)
+    STYLE
+      COLOR 207 255 47
+    END
+  END
+  CLASS
+    NAME "0.09-0.1"
+    EXPRESSION ([pixel] > 0.09  and [pixel] <= 0.10)
+    STYLE
+      COLOR 239 255 15		
+    END
+  END
+  CLASS
+    NAME "0.10-0.12"
+    EXPRESSION ([pixel] > 0.10  and [pixel] <= 12)
+    STYLE
+      COLOR 255 255 0	
+    END
+  END
+  CLASS
+    NAME "0.12-0.14"
+    EXPRESSION ([pixel] > 0.12  and [pixel] <= 0.14)
+    STYLE
+      COLOR 255 230 0
+    END
+  END  
+  CLASS
+    NAME "0.14-0.16"
+    EXPRESSION ([pixel] > 0.14  and [pixel] <= 0.16)
+    STYLE
+      COLOR 255 170 0
+    END
+  END
+  CLASS
+    NAME "0.16-0.18"
+    EXPRESSION ([pixel] > 0.16  and [pixel] <= 0.18)
+    STYLE
+      COLOR 255 100 0
+    END
+  END
+  CLASS
+    NAME "0.18-0.20"
+    EXPRESSION ([pixel] > 0.18  and [pixel] <= 0.20)
+    STYLE
+      COLOR 255 0 0
+    END
+  END
+  CLASS
+    NAME "0.20-0.30"
+    EXPRESSION ([pixel] > 0.20  and [pixel] <= 0.30)
+    STYLE
+      COLOR 207 0 0 
+    END
+  END  
+  CLASS
+    NAME ">0.3"
+    EXPRESSION ([pixel] >= 0.3)
+    STYLE
+      COLOR 143 0 0 
+    END
+  END
+END
+
+END
+
