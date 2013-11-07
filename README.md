@@ -1,7 +1,4 @@
-The script take a tar folder containing for several basins the results of several hydrological models. The reults can be geoTiff raster data and shapefile related to hydrological networks with some attributes related to the matematical simulation.
-
-The tar folder has to be transfered in the input_data folder and the exe_import.sh script has to lunched to prepare all the data. The test.sh script will test the system using some sample data (test_data/mobidic_test_data.tar)
-
+The script take a tar file containing the results of hydrological models for  everal basin. The raster and vector data will be organised to be published in WMS using Mapserver.
 
 Software Requisites
 ===================
@@ -46,7 +43,23 @@ Software Requisites
 3.3. if db name and users are not cf/gis you need to change mapfile/network.map layer connection string
 
 
-4. Client app
+4. Run the scripts
+--------------------
+
+4.1 run test.sh to test the system using the sample data (test_data/mobidic_test_data.tar)
+
+4.2 copy the real data in the input_dir folder
+
+4.3 run exe_import.sh to test the import
+
+4.4 add exe_import.sh to cron
+
+The tar folder has to be transfered in the input_data folder and the exe_import.sh script has to lunched to prepare all the data. The test.sh script will test the system using some sample data 
+
+
+
+
+5. Client app
 --------------------
 
 4.1 copy/link the client_web folder in apache htdocs folder 
