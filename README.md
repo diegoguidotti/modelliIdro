@@ -18,13 +18,12 @@ Software Requisites
 1.2. Check if script can be executed (chmod +x exe_import.sh)
 
 1.3. Modify (if needed) the standard parameters
-<code>
-	modelli_path=/opt/modelli_idro   #path containing the script
-	input_folder=input_dir           #name of the folder within the path containing the input dile
-	db_user=gis                      #name of the database
-	db_name=cf                       #name of the postgres user
-  	srid=903003			 #spatial reference adopted by shapefile 903003 is a modification of 3003 (Gauss Boaga Italia coordinates West)
-</code>
+
+*	modelli_path=/opt/modelli_idro   #path containing the script
+*	input_folder=input_dir           #name of the folder within the path containing the input dile
+*	db_user=gis                      #name of the database
+*	db_name=cf                       #name of the postgres user
+*	srid=903003			 #spatial reference adopted by shapefile 903003 is a modification of 3003 (Gauss Boaga Italia coordinates West)
 
 2. Database setup
 --------------------
@@ -51,4 +50,5 @@ Software Requisites
 --------------------
 
 4.1 copy/link the client_web folder in apache htdocs folder 
-4.2 edit client_web/
+4.2 edit client_web/modelli_idro.js to change mapfile_path if is not /otp/modelli_idro/mapfile/
+4.3 change index.php to list basins and models (it will be generated querying the db)

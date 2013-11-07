@@ -5,8 +5,8 @@ var proj_900913 = new OpenLayers.Projection("EPSG:900913")
 var default_point = new OpenLayers.LonLat(11,43.43);
 var default_zoom = 8;
 
-var base_url='http://localhost/cgi-bin/mapserv';
-var mapfile_path='/opt/modelli_idro/mapfile/'
+var base_url='/cgi-bin/mapserv';
+var mapfile_path='/opt/modelli_idro/mapfile/';
 
 
 function init(){
